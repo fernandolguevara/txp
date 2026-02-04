@@ -1,0 +1,31 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "lsp": {
+    "gopls": {
+      "command": ["gopls"],
+      "extensions": [".go", ".mod", ".sum", ".work"],
+      "initialization": {
+        "gopls": {
+          "analyses": {
+            "nilness": true,
+            "unusedparams": true,
+            "unusedwrite": true
+          },
+          "staticcheck": true,
+          "usePlaceholders": true,
+          "completeUnimported": true
+        }
+      }
+    }
+  },
+  "command": {
+    "build": {
+      "template": "go build ./...",
+      "description": "Build all packages"
+    },
+    "test": {
+      "template": "go test ./...",
+      "description": "Run all tests"
+    }
+  }
+}
